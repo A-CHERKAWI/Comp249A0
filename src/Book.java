@@ -8,12 +8,19 @@ public class Book {
     private double price;
     private static int bookCount = 0;
 
+    public Book(){
+        this.title = " ";
+        this.author = " ";
+        this.ISBN = 0;
+        this.price = 0;
+
+    }
+
     public Book(String title, String author, long ISBN, double price) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
         this.price = price;
-        bookCount++;
     }
 
     public String getTitle() {
@@ -37,13 +44,19 @@ public class Book {
         this.author = author;
     }
     public void setISBN(long ISBN) {
+
         this.ISBN = ISBN;
     }
     public void setPrice(double price) {
         this.price = price;
     }
+    public void setBookCount(int bookCount) {
+        this.bookCount = this.bookCount + bookCount;
+    }
 
-    public int findNumberOfCreatedBooks() {
+
+
+    public static int findNumberOfCreatedBooks() {
         return bookCount;
     }
 
@@ -55,7 +68,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book [title=" + title + ", author=" + author + ", ISBN=" + ISBN + ", price=" + price + "]";
+        return "Title: " + title + "\nAuthor: " + author + "\nISBN: " + ISBN + "\nPrice: " + price + "\n";
     }
 
 
