@@ -55,11 +55,11 @@ public class MainDriver {
                             System.out.println("Enter how many books you want to add: ");
 
                             int addBooks = read.nextInt();
-read.nextLine();
+
 
                             for (int k=Book.findNumberOfCreatedBooks()  ; k < (Book.findNumberOfCreatedBooks() + addBooks); k++) {
                                 inventory[k] = new Book();
-
+                                read.nextLine();
 
                                 System.out.print("Enter the title for book #" + (k+1) + ": ");
                                 String title = read.nextLine();
